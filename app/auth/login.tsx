@@ -157,8 +157,12 @@ export const styles = StyleSheet.create({
   },
   footerText: {
     color: "#f4f4f4",
+    fontSize: 14,
+    fontWeight: 400,
   },
   footerButtonText: {
     color: "#FFD400",
+    fontSize: 14,
+    fontWeight: 400,
   },
 });
