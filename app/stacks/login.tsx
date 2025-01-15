@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import {
   ArrowLeft,
   EnvelopeSimple,
@@ -14,6 +15,12 @@ import {
 } from "react-native";
 
 export default function Login() {
+  const router = useRouter();
+
+  function handleHome() {
+    router.navigate("/tabs");
+  }
+
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.header}>
@@ -40,7 +47,7 @@ export default function Login() {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.buttonSingIn}>
+      <TouchableOpacity onPress={handleHome} style={styles.buttonSingIn}>
         <Text style={styles.buttonSingInText}>Acessar</Text>
       </TouchableOpacity>
 

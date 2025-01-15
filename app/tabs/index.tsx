@@ -14,8 +14,14 @@ import {
   SlidersHorizontal,
   Bed,
 } from "phosphor-react-native";
+import { useRouter } from "expo-router";
 
 export default function Index() {
+  const router = useRouter();
+
+  function handleDetails() {
+    router.navigate("/stacks/details");
+  }
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -53,7 +59,26 @@ export default function Index() {
 
       <View style={styles.content}>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
+            <Image
+              style={styles.cardImage}
+              source={require("../assets/hotel.png")}
+            />
+            <View style={styles.cardInfo}>
+              <Text style={styles.cardInfoTitle}>Pousada Canajurê</Text>
+              <Text style={styles.cardInfoSubTitle}>Florianopólis</Text>
+            </View>
+          </Pressable>
+
+          <View style={styles.cardInfoBuy}>
+            <Text style={styles.cardInfoBuyText}>R$ 450,00</Text>
+            <Bookmark size={30} color="#f4f4f4" weight="fill" />
+          </View>
+        </View>
+      </View>
+      <View style={styles.content}>
+        <View style={styles.card}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
             <Image
               style={styles.cardImage}
               source={require("../assets/hotel.png")}
@@ -133,6 +158,7 @@ export const styles = StyleSheet.create({
   },
   content: {
     width: "100%",
+    marginTop: 20,
     gap: 20,
   },
   card: {

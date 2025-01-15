@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Login from "./auth/login";
+import Login from "./stacks/login";
 import { useRouter } from "expo-router";
 
 export default function Index() {
